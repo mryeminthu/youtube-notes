@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            background-color: rgba(8, 0, 0, 0.863);
+        }
+
+        .container {
+            background-color: bisque;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .answer {
+            background-color: #fff;
+            padding: 8px;
+            border-radius: 7px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq">
+            <p class="question" onclick="answer(1)">How do I create a responsive website?</p>
+            <p class="answer" id="answer1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ullam nemo modi numquam excepturi ratione suscipit provident, odio corrupti ipsam tenetur debitis facilis possimus necessitatibus quibusdam aliquid! Quidem, voluptatem nostrum!
+            Voluptatem harum eos itaque veritatis sapiente placeat ab ratione sunt dolores suscipit nam earum nostrum, delectus at assumenda possimus laborum?</p>
+        </div>
+        <div class="faq">
+            <p class="question" onclick="answer(2)">What is the difference between margin and padding in CSS?</p>
+            <p class="answer" id="answer2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ullam nemo modi numquam excepturi ratione suscipit provident, odio corrupti ipsam tenetur debitis facilis possimus necessitatibus quibusdam aliquid! Quidem, voluptatem nostrum!
+            Voluptatem harum eos itaque veritatis sapiente placeat ab ratione sunt dolores suscipit nam earum nostrum, delectus at assumenda possimus laborum?</p>
+        </div>
+        <div class="faq">
+            <p class="question" onclick="answer(3)">What is Database?</p>
+            <p class="answer" id="answer3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ullam nemo modi numquam excepturi ratione suscipit provident, odio corrupti ipsam tenetur debitis facilis possimus necessitatibus quibusdam aliquid! Quidem, voluptatem nostrum!
+            Voluptatem harum eos itaque veritatis sapiente placeat ab ratione sunt dolores suscipit nam earum nostrum, delectus at assumenda possimus laborum?</p>
+        </div>
+    </div>
+
+    <script>
+        function answer(num) {
+          let answer = document.getElementById('answer' + num);
+          answer.style.display = (answer.style.display) === 'block'?  'none' : 'block';
+        }
+    </script>
+</body>
+</html>
