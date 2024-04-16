@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: bisque;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        button {
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(11, 11, 193);
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <form id="form">
+            <label for="birthdate">Please choose birth date:</label>
+            <input type="date" id="birthdate">
+            <button type="submit">Calculate</button>
+        </form>
+        <h2 id="result"></h2>
+    </div>
+    <script>
+       document.getElementById('form').addEventListener('submit', (e)=>{
+            e.preventDefault();
+            let birthdate = new Date(document.getElementById('birthdate').value);
+            let today = new Date();
+            let month = today.getMonth() - birthdate.getMonth();
+            let year = today.getFullYear() - birthdate.getFullYear();
+
+            if(month < 0){
+                year--;
+                month = month + 12;
+            }
+
+           let resultMsg = '';
+
+           if (year == 0) {
+            resultMsg = `${month} Months`;
+           } else if (year < 0) {
+            resultMsg = `Not born yet!`;
+           } else {
+            resultMsg = `${year} Years and ${month} Months`;
+           }
+
+           document.getElementById('result').textContent = resultMsg;
+       })
+    </script>
+</body>
+</html>
