@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #card {
+            background-color: #ffffff;
+            border: 1px solid blue;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        #quote  {
+            margin: 15px 0;
+            font-size: 32px;
+        }
+
+        #person {
+            font-size: 34px;
+            font-style: italic;
+        }
+
+        #btn {
+            padding: 10px 12px;
+            background-color: rgb(9, 9, 202);
+            border-radius: 12px;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="generate()">
+    <div id="card">
+        <button onclick="generate()" id="btn">Generate quote</button>
+        <div id="quote"></div>
+        <div id="person"></div>
+    </div>
+    <script>
+        let quotes = [
+            {
+                quote: "You must be the change you wish to see in the world.",
+                person: "Mahatma Gandhi"
+            },
+            {
+                quote: "Well done is better than well said.",
+                person: "Benjamin Franklin"
+            },
+            {
+                quote: "A room without books is like a body without a soul.",
+                person: "Marcus Tullius Cicero"
+            },
+            {
+                quote: "If you tell the truth, you don't have to remember anything.",
+                person: "Mark Twain"
+            }
+        ];
+            function generate() {
+              let randomNum = Math.floor(Math.random() * quotes.length);
+              document.getElementById("quote").textContent = quotes[randomNum].quote;
+              document.getElementById("person").textContent = quotes[randomNum].person;
+            }
+    </script>
+</body>
+</html>
