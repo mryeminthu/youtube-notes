@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #counter{
+      background-color: rgb(190, 47, 47);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    button {
+      background-color: lightblue;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="counter"></h2>
+  <button id="decrement">Decrement</button>
+  <button id="increment">Increment</button>
+  <button id="reset">Reset</button>
+  <script>
+   const counter = document.getElementById("counter");
+   const decrementBtn = document.getElementById('decrement');
+   const incrementBtn = document.getElementById('increment');
+   const resetBtn = document.getElementById("reset");
+   let counterValue = 0;
+
+   const updateCounter = () => {
+      if(counterValue < 0) counterValue = 0;
+      if(counterValue > 15) counterValue = 15;
+      counter.style.backgroundColor = getBgColor();
+      counter.innerHTML = counterValue;
+   }
+
+   decrementBtn.addEventListener("click", function() {
+      counterValue--;
+      updateCounter();
+   });
+
+   incrementBtn.addEventListener("click", function(){
+      counterValue++;
+      updateCounter();
+   });
+
+   resetBtn.addEventListener("click", function(){
+    counterValue = 0;
+    updateCounter();
+   });
+
+   const getBgColor = () => {
+    if(counterValue >= 1 && counterValue <= 5) return "green";
+    if(counterValue >= 6 && counterValue <= 10) return "orange";
+    if(counterValue >= 11 && counterValue <= 15) return "yellow";
+   }
+
+   updateCounter();
+  </script>
+</body>
+</html>
+
