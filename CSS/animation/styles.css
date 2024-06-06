@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(36, 33, 28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 4em;
+    animation: color-change 3s infinite, move 4s infinite;
+}
+
+@keyframes color-change {
+    0% {
+        color: #FFFFFF;
+    }
+
+    75% {
+        color: #ce1812;
+    }
+
+    50% {
+        color: #229718;
+    }
+
+    100% {
+        color: #FFFFFF;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-200px);
+    }
+
+    75% {
+        transform: translateY(200px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
