@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+.container {
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #e4dadaa5;
+}
+
+.bar {
+    width: 0%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: rgb(87, 192, 116);
+    animation: loading 5s ease-in-out alternate-reverse;
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
