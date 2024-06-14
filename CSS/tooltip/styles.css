@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tooltip {
+    font-size: 30px;
+    border: 1px solid rgb(129, 172, 59);
+    background-color: rgb(100, 196, 81);
+    padding: 5px 8px;
+    color: #fff;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.text {
+    position: absolute;
+    top: -53px;
+    left: 15%;
+    padding: 10px;
+    font-size: 25px;
+    background-color: rgb(157, 157, 87);
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.tooltip:hover .text {
+    visibility: visible;
+}
